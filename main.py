@@ -7,6 +7,7 @@ pg.init()
 width = 600
 height = 300
 screen = pg.display.set_mode((width, height))
+pg.display.set_caption("Harry Potter Game")
 
 # Mainloop
 lets_continue = True
