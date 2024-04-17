@@ -1,4 +1,5 @@
 import pygame as pg
+import pygame.display
 
 # Colors def
 black = (0, 0, 0)
@@ -17,6 +18,8 @@ height = 300
 screen = pg.display.set_mode((width, height))
 pg.display.set_caption("Harry Potter Game")
 
+screen.fill(red)
+
 # Mainloop
 lets_continue = True
 
@@ -24,6 +27,9 @@ while lets_continue:
     for event in pg.event.get():
         if event.type == pg.QUIT:
             lets_continue = False
+
+    # Refresh
+    pygame.display.update()
 
 # End of pygame
 pg.quit()
