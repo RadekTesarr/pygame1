@@ -1,24 +1,31 @@
 import pygame as pg
-import pygame.display
 
-# Colors def
+# Colors
 black = (0, 0, 0)
 white = (255, 255, 255)
 red = (255, 0, 0)
 green = (0, 255, 0)
 blue = (0, 0, 255)
-yellow = (255, 255, 0)
 
 # Initialization
 pg.init()
 
-# Display window
-width = 600
-height = 300
+# Window
+width = 1000
+height = 600
 screen = pg.display.set_mode((width, height))
-pg.display.set_caption("Harry Potter Game")
+pg.display.set_caption("Game")
 
-screen.fill(red)
+# Background color
+screen.fill(black)
+
+# Shape
+# pg.draw.rect(screen, red, (100, 100, 120, 120))
+
+# Images
+hp_image = pg.image.load("img/icon.png")
+hp_rect = hp_image.get_rect()
+hp_rect.center = (width/2, height/2)
 
 # Mainloop
 lets_continue = True
@@ -28,8 +35,11 @@ while lets_continue:
         if event.type == pg.QUIT:
             lets_continue = False
 
-    # Refresh
-    pygame.display.update()
+    # Bliting
+    screen.blit(hp_image, hp_rect)
 
-# End of pygame
+    # Screen update
+    pg.display.update()
+
+# End
 pg.quit()
