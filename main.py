@@ -25,7 +25,12 @@ screen.fill(black)
 # Images
 hp_image = pg.image.load("img/icon.png")
 hp_rect = hp_image.get_rect()
-hp_rect.center = (width/2, height/2)
+hp_rect.top = 300
+hp_rect.left = 200
+
+coin_img = pg.image.load("img/coin.png")
+coin_rect = coin_img.get_rect()
+coin_rect.center = (width//2, height//2)
 
 # Mainloop
 lets_continue = True
@@ -37,6 +42,7 @@ while lets_continue:
 
     # Bliting
     screen.blit(hp_image, hp_rect)
+    screen.blit(coin_img, coin_rect)
 
     # Screen update
     pg.display.update()
